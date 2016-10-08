@@ -1,0 +1,15 @@
+
+.button.is-primary {
+    background-color: #EB6F57;
+    border-color: transparent;
+    color: white;
+}
+.hero.is-primary {
+    background-color: #EB6F57;
+    color: white;
+}
+.button.is-primary:hover, .button.is-primary:focus, .button.is-primary.is-active {
+    background-color: #fc2500;
+    border-color: transparent;
+    color: white;
+}
