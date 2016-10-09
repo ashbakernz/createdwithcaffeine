@@ -34,11 +34,7 @@ body {
 .logo img {
   width:120px;
 }
-.section {
-  margin-top:40px;
-  border: 1px solid #efefef;
-  border-radius: 5px;
-}
+
 .status-header {
   padding: 40px 40px 80px 40px;
 }

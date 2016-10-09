@@ -3,30 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Discussions;
 
 class HomeController extends Controller
 {
 
-
-    /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+    public function __construct()
     {
-        $discussions = $this->getDiscussions();
-
-        return view('home', [
-          'discussions' => $discussions,
-        ]);
-        // return view('home');
+     $this->middleware('auth');
     }
 
-    public function getDiscussions() {
-       return Discussions::
-        orderBy('created_at', 'desc')
-        ->get();
+    public function index()
+    {
+        return view('home');
     }
 }

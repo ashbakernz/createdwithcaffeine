@@ -17,6 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/categories', 'CategoriesController@index');
+
+Route::get('/discussion/{id}', 'DiscussionsController@view');
+Route::get('/discussions', 'DiscussionsController@index');
+
+
+
 Route::get('/home', 'HomeController@index');
 
 Route::get('profile', 'UserController@profile');

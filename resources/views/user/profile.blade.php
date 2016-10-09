@@ -43,7 +43,7 @@
           </div>
           <div class="column is-2 likes has-text-centered">
             <p class="stat-val">0</p>
-            <p class="stat-key">love</p>
+            <p class="stat-key">cups</p>
           </div>
         </div>
     </div>

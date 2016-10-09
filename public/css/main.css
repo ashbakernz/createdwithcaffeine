@@ -13,3 +13,51 @@
     border-color: transparent;
     color: white;
 }
+
+.hero.is-primary .tabs.is-boxed li.is-active a, .hero.is-primary .tabs.is-boxed li.is-active a:hover, .hero.is-primary .tabs.is-toggle li.is-active a, .hero.is-primary .tabs.is-toggle li.is-active a:hover {
+    background-color: #fff;
+    color: #EB6F57;
+}
+.title {
+    color: #EB6F57;
+}
+
+.nav-item a.is-tab.is-active, a.nav-item.is-tab.is-active {
+    border-bottom: 3px solid #EB6F57;
+    border-top: 3px solid transparent;
+    color: #EB6F57;
+}
+.nav-item a.is-tab:hover, a.nav-item.is-tab:hover {
+    border-bottom: 1px solid #EB6F57;
+    border-top: 1px solid transparent;
+}
+.hero.is-primary .tabs.is-boxed li.is-active a, .hero.is-primary .tabs.is-boxed li.is-active a:hover, .hero.is-primary .tabs.is-toggle li.is-active a, .hero.is-primary .tabs.is-toggle li.is-active a:hover {
+    background-color: #F0F0F0;
+}
+
+.button .icon:last-child, .button .tag:last-child {
+    margin-left: 0px;
+}
+
+.discussion-laravel{
+    border-left-width: 5px;
+    border-style: solid;
+    border-left-color: #F56857;
+}
+.discussion-CSS{
+    border-left-width: 5px;
+    border-style: solid;
+    border-left-color: #8CD362;
+}
+.nav.has-shadow {
+    box-shadow: 0 2px 3px rgba(17, 17, 17, 0.1);
+    background-color: #F0F0F0;
+}
+.menu-list a:hover {
+    background-color: #f5f7fa;
+    color: #EB6F57;
+}
+.menu-list a.is-active {
+    background-color: #EB6F57;
+    color: white;
+}

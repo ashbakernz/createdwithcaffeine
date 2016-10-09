@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('styles')
-    <link rel="stylesheet" href="css/profile.css">
+
 @endsection
 
 @section('content')
@@ -11,10 +11,10 @@
       <div class="columns is-vcentered">
         <div class="column">
           <p class="title">
-            Recent Activity
+            Categories
           </p>
           <p class="subtitle">
-            Everything you need to <strong>learn </strong> the basics
+            Time to <strong>sieve </strong> through the content
           </p>
         </div>
       </div>
@@ -25,7 +25,7 @@
     <div class="container">
       <nav class="tabs is-boxed is-centered">
         <ul>
-          <li class="is-active">
+          <li>
             <a href="{{ url('/home') }}">
               <span class="icon">
                   <i class="ion-clock"></i>
@@ -33,7 +33,7 @@
               Activity
             </a>
           </li>
-          <li>
+          <li class="is-active">
             <a href="{{ url('/categories') }}">
               <span class="icon">
                   <i class="ion-ios-list"></i>
@@ -52,31 +52,28 @@
         </ul>
       </nav></div>
     </div>
-
 </section>
-<section class="section main">
+<nav class="nav has-shadow">
+  <div class="container">
+    <div class="nav-center">
+      <a class="nav-item is-tab is-active" href="/categories/css">
+        CSS
+      </a>
+      <a class="nav-item is-tab" href="/categories/laravel">
+        Laravel
+      </a>
+      <a class="nav-item is-tab " href="/categories/vuejs">
+        Vuejs
+      </a>
+      <a class="nav-item is-tab " href="/categories/Misc">
+        Misc
+      </a>
+    </div>
+  </div>
+</nav>
+<section class="section">
     <div class="container">
-      <div class="columns">
-        <div class="column is-3">
-          <div class="card">
-            <div class="card-image">
-              <figure class="image is-4by3">
-                <img src="http://placehold.it/300x225" alt="">
-              </figure>
-            </div>
-            <div class="card-content">
-              <div class="content">
-                <span class="tag is-dark">#laravel</span>
-                <strong class="timestamp">2 d</strong>
-              </div>
-            </div>
-            <footer class="card-footer">
-              <a class="card-footer-item">Watch</a>
-            </footer>
-          </div>
-          <br>
-        </div>
-      </div>
+
     </div>
   </section>
 @endsection

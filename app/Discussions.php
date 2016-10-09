@@ -6,5 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Discussions extends Model
 {
-    protected $table = 'discussions';
+    protected $table = 'discussion';
+
+    public function discussionReplies()
+    {
+        return $this->hasMany(DiscussionReplies::class);
+    }
 }
