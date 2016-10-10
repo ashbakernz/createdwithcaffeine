@@ -18,15 +18,15 @@
   <div id="nav-menu" class="nav-menu pull-right">
     @if (Auth::guest())
       <span class="nav-item">
-      <a class="button is-primary" href="{{ url('login') }}">
-          <span class="icon">
-              <i class="ion-log-in"></i>
-          </span>
-          <span>Login</span>
-      </a>
+        <a class="button is-primary" href="{{ url('login') }}">
+            <span class="icon">
+                <i class="ion-log-in"></i>
+            </span>
+            <span>Login</span>
+        </a>
       </span>
       <span class="nav-item">
-        <a href="{{ url('register') }}" class="button is-outlined">
+        <a href="{{ url('register') }}" class="button is-primary">
             <span class="icon">
                 <i class="ion-person-add"></i>
             </span>
@@ -84,7 +84,7 @@
       </a>
       </span>
       <span class="nav-item">
-        <a href="{{ url('register') }}" class="button is-outlined">
+        <a href="{{ url('register') }}" class="button is-primary">
             <span class="icon">
                 <i class="ion-person-add"></i>
             </span>
