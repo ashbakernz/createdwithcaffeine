@@ -35,6 +35,14 @@
       </span>
       @else
         <span class="nav-item">
+          <a class="button" href="{{ url('home') }}">
+              <span class="icon">
+                  <i class="ion-earth"></i>
+              </span>
+              <span>Home</span>
+          </a>
+        </span>
+        <span class="nav-item">
           <a class="button" href="{{ url('profile') }}">
               <span class="icon">
                   <i class="ion-person"></i>
@@ -93,6 +101,14 @@
               <span>{{ Auth::user()->name }}</span>
           </a>
           <div class="dropdown-menu" aria-labelledby="dLabel">
+            <a class="dropdown-item" href="{{ url('home') }}">
+              <span class="icon">
+                  <i class="ion-earth"></i>
+              </span>
+              <span>
+                Home
+              </span>
+            </a>
             <a class="dropdown-item" href="{{ url('profile') }}">
               <span class="icon">
                   <i class="ion-person"></i>
@@ -101,6 +117,7 @@
                 Profile
               </span>
             </a>
+
             @if(Auth::user()->isAdmin == '1')
               <a class="dropdown-item" href="{{ url('/admin/dashboard') }}">
                 <span class="icon">
