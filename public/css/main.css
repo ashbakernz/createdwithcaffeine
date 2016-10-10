@@ -61,3 +61,29 @@
     background-color: #EB6F57;
     color: white;
 }
+.card-header-text {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding-right: 10px;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.is-laravel{
+    background-color: #F56857;
+    color: #fff;
+}
+
+.is-CSS{
+    background-color: #8CD362;
+    color: #fff;
+}

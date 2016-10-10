@@ -75,23 +75,27 @@
         <div class="column is-1">
         </div>
         <div class="column is-10">
-          <div class="box">
-            <article class="media">
-              <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong>{{ $discussion-> title }}</strong> <small>@user</small> <small style="float:right;">timestamp</small>
-                    <br>
-                    content
-                  </p>
-                </div>
+          <div class="card is-fullwidth">
+            <header class="card-header">
+              <p class="card-header-title">
+                {{ $discussion-> title }}
+              </p>
+              <a class="card-header-text">
+                <span class="tag is-{{ $discussion->channels }}">{{ $discussion-> channels }}</span>
+              </a>
+            </header>
+            <div class="card-content">
+              <div class="content">
+                {{ $discussion-> content }}
+                <br>
+                <small>{{ $discussion->created_at->diffForHumans() }}</small>
               </div>
-            </article>
+            </div>
           </div>
-          </div>
+        </div>
 
-          <div class="column is-1">
-          </div>
+        <div class="column is-1">
+        </div>
         </a>
         </div>
         <div class="columns">
@@ -124,6 +128,29 @@
           <div class="column is-1">
 
           </div>
+        </div>
+        <div class="columns">
+          <div class="column is-1"></div>
+          <div class="column is-10">
+          <div class="box">
+            <article class="media">
+              <figure class="media-left">
+                <p class="image is-64x64 circular-square">
+                  <img src="http://placehold.it/128x128">
+                </p>
+              </figure>
+              <div class="media-content">
+                <p class="control">
+                  <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                </p>
+                <p class="control">
+                  <button class="button">Post comment</button>
+                </p>
+              </div>
+            </article>
+            </div>
+          </div>
+          <div class="column is-1"></div>
         </div>
 
       </div>
