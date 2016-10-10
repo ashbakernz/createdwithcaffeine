@@ -1,7 +1,20 @@
 @extends('layouts.app')
 
 @section('styles')
-
+<style type="text/css">
+  pre.prettyprint {
+      font-family: Monaco, Consolas, "Lucida Console", monospace;
+      background-color: #333;
+      padding: 20px;
+      font-size: 0.85em;
+      border: 0;
+      color: #e9e4e5;
+      line-height: 1.9em;
+      margin: 1em 0;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+  }
+</style>
 @endsection
 
 @section('content')
@@ -86,7 +99,7 @@
             </header>
             <div class="card-content">
               <div class="content">
-                {{ $discussion-> content }}
+                {{ $discussion-> content }}s
                 <br>
                 <small>{{ $discussion->created_at->diffForHumans() }}</small>
               </div>
@@ -133,21 +146,27 @@
           <div class="column is-1"></div>
           <div class="column is-10">
           <div class="box">
+          <form action="/reply/add" method="POST">
+            {{ csrf_field() }}
             <article class="media">
               <figure class="media-left">
                 <p class="image is-64x64 circular-square">
-                  <img src="http://placehold.it/128x128">
+                  <img src="../uploads/avatars/{{ Auth::user()->avatar }}">
                 </p>
               </figure>
               <div class="media-content">
-                <p class="control">
-                  <textarea class="textarea" placeholder="Add a comment..."></textarea>
+                <p>
+                  <input type="hidden" name="discussion_id" value="{{ $discussion-> id }}">
                 </p>
                 <p class="control">
-                  <button class="button">Post comment</button>
+                  <textarea required name="content" class="textarea" placeholder="Add a comment..."></textarea>
+                </p>
+                <p class="control">
+                  <button type="submit" class="button">Post comment</button>
                 </p>
               </div>
             </article>
+            </form>
             </div>
           </div>
           <div class="column is-1"></div>

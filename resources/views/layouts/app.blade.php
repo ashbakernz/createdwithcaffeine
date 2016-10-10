@@ -11,7 +11,7 @@
 
           <link rel="stylesheet" href="/css/font-awesome.min.css">
           <link rel="stylesheet" href="/css/ionicons.min.css">
-
+          <link rel="stylesheet" href="/css/all.css">
           <link rel="stylesheet" type="text/css" href="/css/bulma.css">
 
           <link rel="stylesheet" type="text/css" href="/css/hero.css">
@@ -32,10 +32,14 @@
       @yield('content')
     </div>
 
-    <!-- Scripts -->
-    <script src="/js/jquery-2.2.0.min.js"></script>
-    <script src="/js/bulma.js"></script>
-    <script src="/js/app.js"></script>
+    <script src="/js/core_lib/jquery.min.js" type="text/javascript"></script>
+
+    <script src="/js/core_lib/bootstrap.util.js" type="text/javascript"></script>
+    <script src="/js/core_lib/bootstrap.dropdown.js" type="text/javascript"></script>
+
+    <script src="/js/bulma.js" type="text/javascript"></script>
+    <script src="/js/scripts.js" type="text/javascript"></script>
+
     @yield('scripts')
 </body>
 </html>
