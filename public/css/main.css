@@ -137,5 +137,16 @@
     #nav-menu {
         display: none;
     }
-    /* hide it elsewhere */
+}
+
+
+a{
+    color: #EB6F57;
+}
+a:hover{
+    color: #222324;
+}
+
+.nav-item a:not(.button) {
+    color: #222324;
 }

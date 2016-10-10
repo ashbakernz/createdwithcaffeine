@@ -29,7 +29,6 @@ class DiscussionsController extends Controller
         where('id', $id)
         ->with('discussionReplies')
         ->first();
-         // dd($discussion);
        return view('user.discussions.view', [
          'discussion' => $discussion,
        ]);

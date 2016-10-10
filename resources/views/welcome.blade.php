@@ -13,12 +13,13 @@
           <link rel="stylesheet" href="./css/ionicons.min.css">
 
           <link rel="stylesheet" type="text/css" href="./css/bulma.css">
+          <link rel="stylesheet" href="/css/all.css">
           <link rel="stylesheet" type="text/css" href="./css/hero.css">
           <link rel="stylesheet" type="text/css" href="./css/main.css">
         </head>
         <body>
 
-          <section class="hero is-primary is-fullheight header-image">
+          <section class="hero is-fullheight header-image">
               <div class="hero-head">
 
                 @include('partials.navigation')
@@ -40,7 +41,13 @@
                       </div>
               </div>
             </section>
-          <script src="/js/jquery-2.2.0.min.js"></script>
-          <script src="/js/bulma.js"></script>
+            <script src="/js/core_lib/jquery.min.js" type="text/javascript"></script>
+
+            <script src="/js/core_lib/bootstrap.util.js" type="text/javascript"></script>
+            <script src="/js/core_lib/bootstrap.dropdown.js" type="text/javascript"></script>
+
+            <script src="/js/bulma.js" type="text/javascript"></script>
+            <script src="/js/scripts.js" type="text/javascript"></script>
+
         </body>
         </html>

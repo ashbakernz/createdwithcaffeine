@@ -105,8 +105,7 @@
                       <p>
                         <strong>{{ $discussion->title }}</strong> <small>{{ '@' . $discussion->user }}</small> <small style="float:right;">{{ $discussion->created_at->diffForHumans() }}</small>
                         <br>
-                        <!-- {{ substr($discussion->content, 0, 100) }} -->
-                        {{ $discussion->discussionReplies->count() }} replies
+                        <span>{{ $discussion->discussionReplies->count() }} replies</span>
                       </p>
                     </div>
                   </div>
