@@ -113,6 +113,8 @@
           </div>
         </a>
         @endforeach
+        <br/>
+        {{ $discussions->links() }}
         </div>
 
       </div>

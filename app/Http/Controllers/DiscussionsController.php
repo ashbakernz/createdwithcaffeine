@@ -38,6 +38,6 @@ class DiscussionsController extends Controller
        return Discussions::
         orderBy('created_at', 'desc')
         ->with('discussionReplies')
-        ->get();
+        ->Paginate(10);
     }
 }
