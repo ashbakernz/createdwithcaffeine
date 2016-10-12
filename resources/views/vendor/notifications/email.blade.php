@@ -51,12 +51,12 @@ $style = [
     /* Buttons ------------------------------ */
 
     'button' => 'display: block; display: inline-block; width: 200px; min-height: 20px; padding: 10px;
-                 background-color: #3869D4; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
+                 background-color: #EB6F57; border-radius: 3px; color: #ffffff; font-size: 15px; line-height: 25px;
                  text-align: center; text-decoration: none; -webkit-text-size-adjust: none;',
 
-    'button--green' => 'background-color: #22BC66;',
-    'button--red' => 'background-color: #dc4d2f;',
-    'button--blue' => 'background-color: #3869D4;',
+    'button--green' => 'background-color: #EB6F57;',
+    'button--red' => 'background-color: #EB6F57;',
+    'button--blue' => 'background-color: #EB6F57;',
 ];
 ?>
 

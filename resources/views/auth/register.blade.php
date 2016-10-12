@@ -51,7 +51,7 @@
                                                 </p>
                                                 <!-- CONFIRM PASSWORD -->
                                                 <p class="control">
-                                                    <input id="password_confirmation" type="password" class="input{{ $errors->has('password_confirmation') ? ' is-danger' : '' }}" name="password_confirmation" required placeholder="password_confirmation">
+                                                    <input id="password_confirmation" type="password" class="input{{ $errors->has('password_confirmation') ? ' is-danger' : '' }}" name="password_confirmation" required placeholder="Password Confirmation">
                                                     @if ($errors->has('password_confirmation'))
                                                         <span class="help is-danger">
                                                             {{ $errors->first('password_confirmation') }}

@@ -18,6 +18,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/admin','AdminController@index');
 
 Route::get('/video/{id}', 'CategoriesController@viewVideo');
 
