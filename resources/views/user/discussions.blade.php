@@ -74,7 +74,7 @@
 <section class="section main">
     <div class="container">
       <div class="columns">
-        <div class="column is-4">
+        <div class="column is-3">
           <div class="box">
             <aside class="menu">
               <p class="menu-label">
@@ -90,7 +90,7 @@
             </aside>
           </div>
         </div>
-        <div class="column is-8">
+        <div class="column is-9">
         @foreach($discussions as $discussion)
         <a href="{{ url('/discussion/' . $discussion->id) }}">
           <div class="box discussion-{{ $discussion->channels }}">

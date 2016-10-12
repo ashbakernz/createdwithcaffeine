@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('styles')
-
+  <link rel="stylesheet" href="/css/profile.css">
 @endsection
 
 @section('content')
@@ -56,24 +56,67 @@
 <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-center">
-      <a class="nav-item is-tab is-active" href="/categories/css">
+      <a class="nav-item is-tab {{ Request::is('categories') ? 'is-active' : '' }}" href="{{ url('/categories') }}">
+        All
+      </a>
+      <a class="nav-item is-tab {{ Request::is('categories/css') ? 'is-active' : '' }}" href="{{ url('/categories/css') }}">
         CSS
       </a>
-      <a class="nav-item is-tab" href="/categories/laravel">
+      <a class="nav-item is-tab {{ Request::is('categories/laravel') ? 'is-active' : '' }}" href="{{ url('/categories/laravel') }}">
         Laravel
       </a>
-      <a class="nav-item is-tab " href="/categories/vuejs">
-        Vuejs
-      </a>
-      <a class="nav-item is-tab " href="/categories/Misc">
+      <a class="nav-item is-tab {{ Request::is('categories/misc') ? 'is-active' : '' }}" href="{{ url('/categories/misc') }}">
         Misc
       </a>
     </div>
   </div>
 </nav>
-<section class="section">
+<section class="section main">
     <div class="container">
-
+      <div class="columns is-centered">
+      @if ($videos->isEmpty())
+        <div class="column is-3">
+          <div class="card">
+            <header class="card-header">
+               <p class="card-header-title">
+                 No videos to display sorry
+               </p>
+             </header>
+          </div>
+        </div>
+      @else
+        @foreach($videos as $video)
+          <div class="column is-3">
+            <div class="card">
+            <header class="card-header">
+               <p class="card-header-title">
+                 {{ $video->title }}
+               </p>
+              <!--
+              <a class="card-header-icon">
+                 <i class="fa fa-angle-down"></i>
+               </a>
+               -->
+             </header>
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="/uploads/video-thumbnails/{{ $video->thumbnail }}" alt="">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="content">
+                  <span class="tag is-{{ $video->channel }}">#{{ $video->channel }}</span>
+                  <strong class="timestamp">{{ $video->created_at->diffForHumans() }}</strong>
+                </div>
+              </div>
+              <footer class="card-footer">
+                <a href="/video/{{ $video->id }}" class="card-footer-item">Watch</a>
+              </footer>
+            </div>
+          </div>
+        @endforeach
+      @endif
+      </div>
     </div>
   </section>
 @endsection

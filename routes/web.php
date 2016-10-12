@@ -11,13 +11,25 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
+
+Route::get('/video/{id}', 'CategoriesController@viewVideo');
+
 Route::get('/categories', 'CategoriesController@index');
+// Sort categories by
+Route::get('/categories/css', 'CategoriesController@sortByCSS');
+Route::get('/categories/laravel', 'CategoriesController@sortByLaravel');
+Route::get('/categories/misc', 'CategoriesController@sortByMisc');
+
+
+
+
 Route::get('/discussion/{id}', 'DiscussionsController@view');
 Route::get('/discussions', 'DiscussionsController@index');
 
@@ -30,3 +42,4 @@ Route::get('/home', 'HomeController@index');
 Route::get('profile', 'UserController@profile');
 
 Route::post('profile', 'UserController@update_avatar');
+

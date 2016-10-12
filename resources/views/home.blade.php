@@ -59,6 +59,16 @@
       <div class="columns">
         <div class="column is-3">
           <div class="card">
+          <header class="card-header">
+             <p class="card-header-title">
+             Title
+             </p>
+            <!--
+            <a class="card-header-icon">
+               <i class="fa fa-angle-down"></i>
+             </a>
+             -->
+           </header>
             <div class="card-image">
               <figure class="image is-4by3">
                 <img src="http://placehold.it/300x225" alt="">
@@ -66,16 +76,16 @@
             </div>
             <div class="card-content">
               <div class="content">
-                <span class="tag is-dark">#laravel</span>
-                <strong class="timestamp">2 d</strong>
+                <span class="tag is-dark">#channel</span>
+                <strong class="timestamp">2 days ago</strong>
               </div>
             </div>
             <footer class="card-footer">
               <a class="card-footer-item">Watch</a>
             </footer>
           </div>
-          <br>
         </div>
+
       </div>
     </div>
   </section>
