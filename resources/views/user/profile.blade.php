@@ -34,11 +34,11 @@
             <p class="tagline">The users profile bio would go here, of course. It could be two lines</p>
           </div>
           <div class="column is-2 followers has-text-centered">
-            <p class="stat-val">1</p>
+            <p class="stat-val">{{ $topicCount }}</p>
             <p class="stat-key">topics</p>
           </div>
           <div class="column is-2 following has-text-centered">
-            <p class="stat-val">0</p>
+            <p class="stat-val">{{ $repliesCount }}</p>
             <p class="stat-key">replies</p>
           </div>
           <div class="column is-2 likes has-text-centered">

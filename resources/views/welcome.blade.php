@@ -13,9 +13,22 @@
           <link rel="stylesheet" href="./css/ionicons.min.css">
 
           <link rel="stylesheet" type="text/css" href="./css/bulma.css">
-          <link rel="stylesheet" href="/css/all.css">
           <link rel="stylesheet" type="text/css" href="./css/hero.css">
           <link rel="stylesheet" type="text/css" href="./css/main.css">
+          <link rel="stylesheet" type="text/css" href="./css/all.css">
+          <style type="text/css">
+            .button.is-primary {
+                background-color: #EB6F57;
+                border-color: transparent;
+                color: white;
+            }
+            .button.is-primary:hover, .button.is-primary:focus, .button.is-primary.is-active {
+                background-color: #fc2500;
+                border-color: transparent;
+                color: white;
+            }
+
+          </style>
         </head>
         <body>
 
@@ -26,19 +39,19 @@
               </div>
               <div class="hero-body">
                 <div class="container has-text-centered">
-                        <h1 class="title is-2">
+                    <h1 class="title is-2">
 
-                        </h1>
-                        <h2 class="subtitle is-5">
-                          Learn to code
-                        </h2>
-                        <a class="button is-primary" href="{{ url('home') }}">
-                            <span class="icon">
-                                <i class="ion-log-in"></i>
-                            </span>
-                            <span>Get Started</span>
-                        </a>
-                      </div>
+                    </h1>
+                    <h2 class="subtitle is-5">
+                      Learn to code
+                    </h2>
+                    <a class="button is-primary" href="{{ url('home') }}">
+                        <span class="icon">
+                            <i class="ion-log-in"></i>
+                        </span>
+                        <span>Get Started</span>
+                    </a>
+                  </div>
               </div>
             </section>
             <script src="/js/core_lib/jquery.min.js" type="text/javascript"></script>

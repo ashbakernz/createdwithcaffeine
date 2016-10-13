@@ -19,13 +19,17 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/admin','AdminController@index');
+Route::get('/admin/videos','AdminController@videos');
+Route::get('/admin/users','AdminController@users');
 
 Route::get('/video/{id}', 'CategoriesController@viewVideo');
 
 Route::get('/categories', 'CategoriesController@index');
 // Sort categories by
 Route::get('/categories/css', 'CategoriesController@sortByCSS');
+
 Route::get('/categories/laravel', 'CategoriesController@sortByLaravel');
+
 Route::get('/categories/misc', 'CategoriesController@sortByMisc');
 
 

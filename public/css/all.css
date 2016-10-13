@@ -17009,7 +17009,9 @@ span.CodeMirror-selectedtext {
 
 .breadcrumb {
   list-style: none;
-  font-size: 13px; }
+  font-size: 13px;
+  padding-bottom: 20px;
+}
 
 .breadcrumb li {
   display: inline-block; }

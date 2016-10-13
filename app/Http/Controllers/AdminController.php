@@ -10,7 +10,7 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-     $this->middleware(['auth','admin']);
+     $this->middleware(['auth', 'admin']);
     }
 
     public function index()
@@ -21,4 +21,23 @@ class AdminController extends Controller
       // ]);
         return view('admin.dashboard');
     }
+
+    public function videos()
+    {
+      // $videos = $this->getVideos();
+      // return view('user.categories', [
+      //   'videos' => $videos,
+      // ]);
+        return view('admin.videos');
+    }
+
+    public function users()
+    {
+      // $videos = $this->getVideos();
+      // return view('user.categories', [
+      //   'videos' => $videos,
+      // ]);
+        return view('admin.users');
+    }
+
 }

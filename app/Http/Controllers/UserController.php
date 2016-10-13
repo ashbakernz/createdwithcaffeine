@@ -5,14 +5,33 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Auth;
 use Image;
+use App\Discussions;
+use App\DiscussionReplies;
 
 use App\Http\Requests;
 
 class UserController extends Controller
 {
     public function profile(){
-      return view('user.profile', array('user' => Auth::user()) );
+
+      $topicCount = $this->getTopicCount(Auth::user()->id);
+      $repliesCount = $this->getRepliesCount(Auth::user()->id);
+
+      return view('user.profile', ['user' => Auth::user(), 'topicCount' => $topicCount, 'repliesCount' => $repliesCount] );
     }
+
+    public function getTopicCount($id){
+      return count(Discussions::
+       where('user_id', $id)
+       ->get());
+    }
+
+    public function getRepliesCount($id){
+      return count(DiscussionReplies::
+       where('user_id', $id)
+       ->get());
+    }
+
 
     public function update_avatar(Request $request){
 
@@ -27,6 +46,6 @@ class UserController extends Controller
           $user->save();
         }
 
-        return view('user.profile', array('user' => Auth::user()) );
+        return view('user.profile', ['user' => Auth::user()] );
     }
 }

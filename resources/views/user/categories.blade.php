@@ -73,8 +73,8 @@
 </nav>
 <section class="section main">
     <div class="container">
-      <div class="columns is-centered">
       @if ($videos->isEmpty())
+      <div class="columns is-centered">
         <div class="column is-3">
           <div class="card">
             <header class="card-header">
@@ -84,19 +84,18 @@
              </header>
           </div>
         </div>
+      </div>
       @else
-        @foreach($videos as $video)
+
+      @foreach($videos->chunk(4) as $chunk)
+      <div class="columns">
+        @foreach ($chunk as $video)
           <div class="column is-3">
             <div class="card">
             <header class="card-header">
                <p class="card-header-title">
                  {{ $video->title }}
                </p>
-              <!--
-              <a class="card-header-icon">
-                 <i class="fa fa-angle-down"></i>
-               </a>
-               -->
              </header>
               <div class="card-image">
                 <figure class="image is-4by3">
@@ -114,9 +113,13 @@
               </footer>
             </div>
           </div>
+          @endforeach
+        </div>
         @endforeach
+
       @endif
       </div>
+
     </div>
   </section>
 @endsection

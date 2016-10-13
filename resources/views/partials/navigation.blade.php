@@ -1,12 +1,15 @@
 <nav class="nav has-shadow" id="top">
   <div class="nav-left">
+    <a class="nav-item is-brand" href="{{ url('/home') }}">
+          <span class="icon">
+              <i class="ion-coffee"></i>
+          </span>
+        Created With Caffeine
+    </a>
 
   </div>
 
   <div class="nav-center">
-    <a class="nav-item is-brand" href="{{ url('/home') }}">
-        Created With Caffeine
-    </a>
   </div>
 
   <span id="nav-toggle" class="nav-toggle">
@@ -52,7 +55,7 @@
         </span>
         @if(Auth::user()->isAdmin == '1')
            <span class="nav-item">
-             <a href="{{ url('/admin/dashboard') }}" class="button is-outlined">
+             <a href="{{ url('/admin') }}" class="button is-outlined">
                  <span class="icon">
                      <i class="ion-wand"></i>
                  </span>
@@ -119,7 +122,7 @@
             </a>
 
             @if(Auth::user()->isAdmin == '1')
-              <a class="dropdown-item" href="{{ url('/admin/dashboard') }}">
+              <a class="dropdown-item" href="{{ url('/admin') }}">
                 <span class="icon">
                     <i class="ion-wand"></i>
                 </span>

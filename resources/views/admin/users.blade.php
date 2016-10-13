@@ -11,10 +11,10 @@
       <div class="columns is-vcentered">
         <div class="column">
           <p class="title">
-           Administrator Dashboard
+           Manage Users
           </p>
           <p class="subtitle">
-            Getting the <strong>insights </strong> on your website
+            Manage all em <strong>peoples </strong> accounts
           </p>
         </div>
       </div>
@@ -25,7 +25,7 @@
     <div class="container">
       <nav class="tabs is-boxed is-centered">
         <ul>
-          <li class="is-active">
+          <li>
             <a href="{{ url('/admin') }}">
               <span class="icon">
                   <i class="ion-ios-speedometer"></i>
@@ -41,7 +41,7 @@
               Videos
             </a>
           </li>
-          <li>
+          <li class="is-active">
             <a href="{{ url('/admin/users') }}">
               <span class="icon">
                   <i class="ion-person-stalker"></i>

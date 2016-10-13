@@ -65,9 +65,28 @@
         </ul>
       </nav></div>
     </div>
+    </div>
 </section>
 <section class="section main">
     <div class="container">
+
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{ url('/discussions') }}">
+                Discussions
+            </a>
+        </li>
+<!--         <li class="breadcrumb-item">
+            <a href="{{ url('/discussion/' . $discussion->channels) }}">
+                {{ $discussion-> channels }}
+            </a>
+        </li> -->
+        <li class="breadcrumb-item">
+            <a href="{{ url('/discussion/' . $discussion->id) }}">
+                {{ $discussion-> title }}
+            </a>
+        </li>
+    </ul>
       <div class="columns">
 <!--         <div class="column is-4">
           <div class="box">

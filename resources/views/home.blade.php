@@ -53,8 +53,27 @@
       </nav></div>
     </div>
 
+
 </section>
 <section class="section main">
+<nav class="level">
+  <div class="level-item has-text-centered">
+    <p class="heading">Videos</p>
+    <p class="title">3</p>
+  </div>
+  <div class="level-item has-text-centered">
+    <p class="heading">Discussions</p>
+    <p class="title">7</p>
+  </div>
+  <div class="level-item has-text-centered">
+    <p class="heading">Replies</p>
+    <p class="title">18</p>
+  </div>
+  <div class="level-item has-text-centered">
+    <p class="heading">Cups of coffee</p>
+    <p class="title">109</p>
+  </div>
+</nav>
     <div class="container">
       <div class="columns">
         <div class="column is-3">
