@@ -16,7 +16,11 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('admin.dashboard');
+        $totalUsers = count(User::all());
+        $totalVideos = count(Videos::all());
+
+
+        return view('admin.dashboard', ['totalUsers' => $totalUsers, 'totalVideos' => $totalVideos] );
     }
 
     public function videos()
@@ -41,13 +45,38 @@ class AdminController extends Controller
     public function saveNewVideo(Request $request){
 
         $video = new Videos;
-        $video->task = $request->task;
-        $video->author = Auth::User()->name;
-        $video->status = 'Not Completed';
-        $video->type = $request->type;
+        $video->title = $request->videoTitle;
+        $video->content = $request->videoContent;;
+        $video->channel = $request->videoChannel;
+        $video->video_url = $request->videoUrl;
+        $video->thumbnail = $request->videoThumbnail;
         $video->save();
 
         return redirect('/admin/videos');
     }
 
+    public function addThumbnails(Request $request){
+
+        // Handle the user upload of avatar
+        if($request->hasFile('avatar')){
+          $avatar = $request->file('avatar');
+          $filename = time() . '.' . $avatar->getClientOriginalExtension();
+          Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename ) );
+
+          $user = Auth::user();
+          $user->avatar = $filename;
+          $user->save();
+        }
+
+        return view('user.profile', ['user' => Auth::user()] );
+    }
+
+    public function deleteVideo($id)
+    {
+        $video = Videos::find($id);
+        $video->delete();
+
+
+        return redirect('/admin/videos');
+    }
 }

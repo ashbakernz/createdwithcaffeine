@@ -64,6 +64,36 @@ iframe {
 </section>
 <section class="section main">
     <div class="container">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{ url('/categories') }}">
+                Categories
+            </a>
+        </li>
+
+        <li class="breadcrumb-item">
+          @if($video->channel == 'CSS')
+            <a href="{{ url('/categories/css') }}">
+                CSS
+            </a>
+          @elseif($video->channel == 'laravel')
+            <a href="{{ url('/categories/laravel') }}">
+                Laravel
+            </a>
+          @elseif($video->channel == 'misc')
+            <a href="{{ url('/categories/misc') }}">
+                Misc
+            </a>
+          @endif
+
+        </li>
+
+        <li class="breadcrumb-item">
+            <a>
+                {{ $video->title }}
+            </a>
+        </li>
+    </ul>
       <div class="columns">
 <!--         <div class="column is-4">
           <div class="box">
@@ -84,24 +114,6 @@ iframe {
         <div class="column is-1">
         </div>
         <div class="column is-10">
-<!--           <div class="card is-fullwidth">
-            <header class="card-header">
-              <p class="card-header-title">
-                video title
-              </p>
-              <a class="card-header-text">
-                <span class="tag is-"></span>
-              </a>
-            </header>
-            <div class="card-content">
-              <div class="content">
-                content
-                <br>
-                <small>time</small>
-              </div>
-            </div>
-          </div> -->
-
           <div class="container">
               <div class="columns">
                 <div class="column is-12">

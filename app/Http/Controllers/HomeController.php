@@ -21,6 +21,7 @@ class HomeController extends Controller
       $videosCount = count(Videos::all());
       $repliesCount = count(DiscussionReplies::all());
 
+
       return view('home', ['discussionsCount' => $discussionsCount, 'videosCount' => $videosCount, 'repliesCount' => $repliesCount]);
     }
 

@@ -113,9 +113,13 @@
                     </td>
                     <td>
                       <a>
-                        Overview
                         <div class="icon">
-                          <i class="ion-paper-airplane" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Overview"></i>
+                          <i class="ion-ios-eye-outline" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Overview"></i>
+                        </div>
+                      </a>
+                      <a href="{{ url('admin/videos/delete/' . $video->id) }}">
+                        <div class="icon">
+                          <i class="ion-ios-trash-outline" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Trash"></i>
                         </div>
                       </a>
                     </td>

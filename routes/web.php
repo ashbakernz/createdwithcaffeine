@@ -19,9 +19,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/admin','AdminController@index');
+
 Route::get('/admin/videos','AdminController@videos');
 
 Route::get('/admin/videos/add','AdminController@addVideo');
+
+Route::get('/admin/videos/delete/{id}','AdminController@deleteVideo');
+
 Route::post('/admin/videos/save','AdminController@saveNewVideo');
 
 Route::get('/admin/users','AdminController@users');

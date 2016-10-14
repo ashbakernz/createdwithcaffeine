@@ -45,8 +45,7 @@ class DiscussionsController extends Controller
     public function delete($id)
     {
 
-      $deletedRows = DiscussionReplies::where('discussions_id', $id)->delete();
-
+        $deletedRows = DiscussionReplies::where('discussions_id', $id)->delete();
 
         $discussion = Discussions::find($id);
         $discussion->delete();

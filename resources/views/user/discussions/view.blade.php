@@ -76,11 +76,7 @@
                 Discussions
             </a>
         </li>
-<!--         <li class="breadcrumb-item">
-            <a href="{{ url('/discussion/' . $discussion->channels) }}">
-                {{ $discussion-> channels }}
-            </a>
-        </li> -->
+
         <li class="breadcrumb-item">
             <a href="{{ url('/discussion/' . $discussion->id) }}">
                 {{ $discussion-> title }}
@@ -173,28 +169,6 @@
                     </article>
               </div>
             @endforeach
-
-           <!--  @foreach($discussion->discussionReplies as $reply)
-            <div class="box">
-              <div class="is-fullwidth">
-                <header class="card-header">
-                  <p class="card-header-title">
-                    {{ $reply->user_name }}
-                  </p>
-                  <a class="card-header-icon">
-                    <i class="fa fa-angle-down"></i>
-                  </a>
-                </header>
-                <div class="card-content">
-                  <div class="content">
-                    {{ $reply->content }}
-                    <br>
-                    <small>{{ $reply->created_at->diffForHumans() }}</small>
-                  </div>
-                </div>
-              </div>
-            </div>
-            @endforeach -->
           </div>
           <div class="column is-1">
 
