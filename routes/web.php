@@ -40,6 +40,7 @@ Route::get('/categories/misc', 'CategoriesController@sortByMisc');
 
 
 Route::get('/discussion/{id}', 'DiscussionsController@view');
+Route::get('/discussion/delete/{id}', 'DiscussionsController@delete');
 Route::get('/discussions', 'DiscussionsController@index');
 
 

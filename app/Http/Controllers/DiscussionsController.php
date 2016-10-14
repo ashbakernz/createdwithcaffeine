@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Discussions;
+use App\DiscussionReplies;
 use Auth;
 
 class DiscussionsController extends Controller
@@ -39,5 +40,18 @@ class DiscussionsController extends Controller
         orderBy('created_at', 'desc')
         ->with('discussionReplies')
         ->Paginate(10);
+    }
+
+    public function delete($id)
+    {
+
+      $deletedRows = DiscussionReplies::where('discussions_id', $id)->delete();
+
+
+        $discussion = Discussions::find($id);
+        $discussion->delete();
+
+
+        return redirect('/discussions');
     }
 }

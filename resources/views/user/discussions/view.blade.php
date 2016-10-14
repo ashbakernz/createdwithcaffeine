@@ -113,7 +113,14 @@
                 {{ $discussion-> title }}
               </p>
               <a class="card-header-text">
-                <span class="tag is-{{ $discussion->channels }}">{{ $discussion-> channels }}</span>
+                <span class="tag is-{{ $discussion->channels }}">{{ $discussion-> channels }}
+                </span>
+              </a>
+
+              <a class="card-header-text" href="{{ url('/discussion/delete/' . $discussion->id) }}">
+                <span class="icon is-primary">
+                  <i class="ion-ios-close-outline"></i>
+                </span>
               </a>
             </header>
             <div class="card-content">
