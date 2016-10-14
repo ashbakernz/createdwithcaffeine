@@ -151,3 +151,20 @@ a:hover{
     color: #222324;
 }
 
+.input:active, .textarea:active, .input:focus, .textarea:focus, .input.is-active, .is-active.textarea {
+    border-color: #EB6F57;
+    outline: none;
+}
+
+.select select:active, .select select:focus, .select select.is-active {
+    border-color: #EB6F57;
+    outline: none;
+}
+
+.box .head .options {
+    display: inline-block;
+    float: right;
+    padding-top: 7px;
+    color: #CCCCCC;
+}
+

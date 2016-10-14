@@ -16,48 +16,28 @@ class CategoriesController extends Controller
 
    public function index()
    {
-     // $videos = $this->getVideos();
-     // return view('user.categories', [
-     //   'videos' => $videos,
-     // ]);
 
-
-     // $collection = $this->getVideos();
-
-     // $videos = $collection->chunk(4);
-     // $videos->toArray();
-
-    $videos = collect($this->getVideos());
-    $videos->chunk(4);
-    $videos->toArray();
-
+    $videos = $this->getVideos();
 
      return view('user.categories', [
        'videos' => $videos,
      ]);
-       // return view('home');
    }
 
    public function getVideos() {
       return Videos::
        orderBy('created_at', 'desc')
-       ->get();
+       ->paginate(8);
    }
 
    public function sortByCSS(Request $request)
    {
-      // $allVideos = $this->getVideos();
 
-      // $videos = $allVideos->where('channel', '=', 'CSS');
-
-      $collection = Videos::
+       $videos = Videos::
        orderBy('created_at', 'desc')
        ->where('channel', '=', 'CSS')
-       ->get();
+       ->paginate(8);
 
-       $videos = collect($collection);
-       $videos->chunk(4);
-       $videos->toArray();
 
       return view('user.categories', [
         'videos' => $videos,
@@ -66,17 +46,11 @@ class CategoriesController extends Controller
 
    public function sortByLaravel(Request $request)
    {
-      // $allVideos = $this->getVideos();
 
-      // $videos = $allVideos->where('channel', '=', 'laravel');
-      $collection = Videos::
+      $videos = Videos::
        orderBy('created_at', 'desc')
        ->where('channel', '=', 'laravel')
-       ->get();
-
-       $videos = collect($collection);
-       $videos->chunk(4);
-       $videos->toArray();
+       ->paginate(8);
 
       return view('user.categories', [
         'videos' => $videos,
@@ -85,20 +59,14 @@ class CategoriesController extends Controller
 
    public function sortByMisc(Request $request)
    {
-
-      $collection = Videos::
+      $videos = Videos::
        orderBy('created_at', 'desc')
        ->where('channel', '=', 'misc')
-       ->get();
-
-       $videos = collect($collection);
-       $videos->chunk(4);
-       $videos->toArray();
+       ->paginate(8);
 
       return view('user.categories', [
         'videos' => $videos,
       ]);
-
    }
 
    public function viewVideo($id)

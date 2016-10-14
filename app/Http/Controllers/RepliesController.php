@@ -25,4 +25,12 @@ class RepliesController extends Controller
 
         return redirect('/discussion/' . $request->discussion_id);
     }
+
+    public function delete($reply_id, $post_id)
+    {
+        $reply = DiscussionReplies::find($reply_id);
+        $reply->delete();
+        return redirect('/discussion/' . $post_id);
+    }
+
 }

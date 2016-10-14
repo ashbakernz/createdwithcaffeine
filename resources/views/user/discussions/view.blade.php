@@ -138,24 +138,56 @@
 
             @foreach($discussion->discussionReplies as $reply)
               <div class="box">
+                @if($reply->user_id == Auth::User()->id)
+                <div class="head">
+                  <div class="options">
+                    <a href="{{ url('/reply/delete/' . $reply->id . '/' . $discussion->id) }}">
+                      <span class="icon is-primary">
+                        <i class="ion-ios-close-outline"></i>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                @else
+                @endif
                     <article class="media">
-                      <!-- <div class="media-left">
-                        <figure class="image is-64x64 circular-square">
-                          <img src="uploads/avatars/{{ $discussion->avatar }}" alt="Image">
-                        </figure>
-                      </div> -->
                       <div class="media-content">
                         <div class="content">
                           <p>
-                            <strong>{{ $reply->user_name }}</strong> <small style="float:right;">{{ $reply->created_at->diffForHumans() }}</small>
+                            <strong>{{ $reply->user_name }}</strong>
+                            </small>
                             <br>
                             {{ $reply->content }}
+                            <br>
+                            <small>{{ $reply->created_at->diffForHumans() }}</small>
                           </p>
                         </div>
                       </div>
                     </article>
               </div>
             @endforeach
+
+           <!--  @foreach($discussion->discussionReplies as $reply)
+            <div class="box">
+              <div class="is-fullwidth">
+                <header class="card-header">
+                  <p class="card-header-title">
+                    {{ $reply->user_name }}
+                  </p>
+                  <a class="card-header-icon">
+                    <i class="fa fa-angle-down"></i>
+                  </a>
+                </header>
+                <div class="card-content">
+                  <div class="content">
+                    {{ $reply->content }}
+                    <br>
+                    <small>{{ $reply->created_at->diffForHumans() }}</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            @endforeach -->
           </div>
           <div class="column is-1">
 

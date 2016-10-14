@@ -20,6 +20,10 @@ Auth::routes();
 
 Route::get('/admin','AdminController@index');
 Route::get('/admin/videos','AdminController@videos');
+
+Route::get('/admin/videos/add','AdminController@addVideo');
+Route::post('/admin/videos/save','AdminController@saveNewVideo');
+
 Route::get('/admin/users','AdminController@users');
 
 Route::get('/video/{id}', 'CategoriesController@viewVideo');
@@ -40,6 +44,7 @@ Route::get('/discussions', 'DiscussionsController@index');
 
 
 Route::post('/reply/add', 'RepliesController@add');
+Route::get('/reply/delete/{post_id}/{reply_id}', 'RepliesController@delete');
 
 
 Route::get('/home', 'HomeController@index');
