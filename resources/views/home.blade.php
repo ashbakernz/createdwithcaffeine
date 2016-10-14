@@ -90,7 +90,7 @@
            </header>
             <div class="card-image">
               <figure class="image is-4by3">
-                <img src="http://placehold.it/300x225" alt="">
+                <img src="/uploads/video-thumbnails/1475765977.png" alt="">
               </figure>
             </div>
             <div class="card-content">

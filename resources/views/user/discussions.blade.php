@@ -28,7 +28,7 @@
           <li>
             <a href="{{ url('/home') }}">
               <span class="icon">
-                  <i class="ion-clock"></i>
+                <i class="ion-clock"></i>
               </span>
               Activity
             </a>
@@ -36,7 +36,7 @@
           <li>
             <a href="{{ url('/categories') }}">
               <span class="icon">
-                  <i class="ion-ios-list"></i>
+                <i class="ion-ios-list"></i>
               </span>
               Categories
             </a>
@@ -44,7 +44,7 @@
           <li class="is-active">
             <a href="{{ url('/discussions') }}">
               <span class="icon">
-                  <i class="ion-chatboxes"></i>
+                <i class="ion-chatboxes"></i>
               </span>
               Discussions
             </a>
@@ -52,7 +52,7 @@
         </ul>
       </nav></div>
     </div>
-</section>
+  </section>
 <!-- <nav class="nav has-shadow">
   <div class="container">
     <div class="nav-center">
@@ -72,52 +72,61 @@
   </div>
 </nav> -->
 <section class="section main">
-    <div class="container">
-      <div class="columns">
-        <div class="column is-3">
-          <div class="box">
-            <aside class="menu">
-              <p class="menu-label">
-                Channels
-              </p>
-              <ul class="menu-list">
-                <li><a class="is-active" href="url('/discussions')">All</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">Laravel</a></li>
-                <li><a href="#">Vuejs</a></li>
-                <li><a href="#">Misc</a></li>
-              </ul>
-            </aside>
-          </div>
-        </div>
-        <div class="column is-9">
-        @foreach($discussions as $discussion)
-        <a href="{{ url('/discussion/' . $discussion->id) }}">
-          <div class="box discussion-{{ $discussion->channels }}">
-                <article class="media">
-                  <div class="media-left">
-                    <figure class="image is-64x64 circular-square">
-                      <img src="uploads/avatars/{{ $discussion->avatar }}" alt="Image">
-                    </figure>
-                  </div>
-                  <div class="media-content">
-                    <div class="content">
-                      <p>
-                        <strong>{{ $discussion->title }}</strong> <small>{{ '@' . $discussion->user }}</small> <small style="float:right;">{{ $discussion->created_at->diffForHumans() }}</small>
-                        <br>
-                        <span>{{ $discussion->discussionReplies->count() }} replies</span>
-                      </p>
-                    </div>
-                  </div>
-                </article>
-          </div>
-        </a>
-        @endforeach
-        <br/>
-        {{ $discussions->links() }}
-        </div>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-3">
+        <div class="box">
+        <aside class="menu">
 
+         <ul class="menu-list">
+           <li>
+            <a style="color: #69707a;" href="{{ url('discussions/add') }}" class="button-add-task">
+              <span class="icon"><i class="ion-plus-round"></i></span>
+              <span>Discuss</span>
+            </a>
+          </li>
+        </ul>
+          <p class="menu-label">
+            Channels
+          </p>
+          <ul class="menu-list">
+            <li><a class="is-active" href="url('/discussions')">All</a></li>
+            <li><a href="#">CSS</a></li>
+            <li><a href="#">Laravel</a></li>
+            <li><a href="#">Vuejs</a></li>
+            <li><a href="#">Misc</a></li>
+          </ul>
+        </aside>
       </div>
     </div>
-  </section>
+    <div class="column is-9">
+      @foreach($discussions as $discussion)
+      <a href="{{ url('/discussion/' . $discussion->id) }}">
+        <div class="box discussion-{{ $discussion->channels }}">
+          <article class="media">
+            <div class="media-left">
+              <figure class="image is-64x64 circular-square">
+                <img src="uploads/avatars/{{ $discussion->avatar }}" alt="Image">
+              </figure>
+            </div>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>{{ $discussion->title }}</strong> <small>{{ '@' . $discussion->user }}</small> <small style="float:right;">{{ $discussion->created_at->diffForHumans() }}</small>
+                  <br>
+                  <span>{{ $discussion->discussionReplies->count() }} replies</span>
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </a>
+      @endforeach
+      <br/>
+      {{ $discussions->links() }}
+    </div>
+
+  </div>
+</div>
+</section>
 @endsection

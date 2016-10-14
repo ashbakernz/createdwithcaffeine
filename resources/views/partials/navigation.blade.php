@@ -96,6 +96,17 @@
       </span>
       @else
       <span class="nav-item pull-right">
+      @if (Request::is('admin/*') || Request::is('admin'))
+        <div style="padding-right: 5px;">
+          <a href="{{ url('home') }}" class="button is-primary">
+              <span class="icon">
+                  <i class="ion-ios-arrow-back"></i>
+              </span>
+              <span>Back to frontend</span>
+          </a>
+        </div>
+      @endif
+
       <div class="dropdown pull-right">
           <a href="javascript:void(0)" class="button is-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <span class="icon">

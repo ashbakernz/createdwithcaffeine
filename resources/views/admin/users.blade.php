@@ -84,6 +84,10 @@
     <div class="card is-fullwidth">
       <header class="card-header">
         <p class="card-header-title">Users</p>
+        <div class="search control has-addons">
+          <input class="input" type="text" placeholder="Search">
+          <button class="button is-info"><i class="fa fa-search"></i></button>
+        </div>
       </header>
       <div class="card-content">
         <div class="responsive-table">
@@ -98,7 +102,7 @@
               </tr>
             </thead>
             <tbody>
-            @foreach($users as $user)
+              @foreach($users as $user)
               <tr>
                 <td>
                   <a>{{ $user -> name }}</a>
@@ -108,9 +112,9 @@
                 </td>
                 <td>
                   @if ($user-> isAdmin == 1)
-                    Admin
+                  Admin
                   @else
-                    User
+                  User
                   @endif
                 </td>
                 <td>
@@ -118,14 +122,18 @@
                 </td>
                 <td>
                   <a>
-                    Overview
                     <div class="icon">
-                      <i class="ion-paper-airplane" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Overview"></i>
+                      <i class="ion-ios-eye-outline" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Overview"></i>
+                    </div>
+                  </a>
+                  <a href="{{ url('admin/users/delete/' . $user->id) }}">
+                    <div class="icon">
+                      <i class="ion-ios-trash-outline" aria-hidden="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Trash"></i>
                     </div>
                   </a>
                 </td>
               </tr>
-            @endforeach
+              @endforeach
             </tbody>
           </table>
         </div>

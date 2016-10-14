@@ -76,7 +76,15 @@ class AdminController extends Controller
         $video = Videos::find($id);
         $video->delete();
 
-
         return redirect('/admin/videos');
     }
+
+    public function deleteUser($id)
+    {
+        $video = User::find($id);
+        $video->delete();
+
+        return redirect('/admin/users');
+    }
+
 }
