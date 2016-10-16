@@ -38,7 +38,7 @@
       </span>
       @else
         <span class="nav-item">
-          <a class="button" href="{{ url('home') }}">
+          <a class="button is-primary" href="{{ url('home') }}">
               <span class="icon">
                   <i class="ion-earth"></i>
               </span>
@@ -46,7 +46,7 @@
           </a>
         </span>
         <span class="nav-item">
-          <a class="button" href="{{ url('profile') }}">
+          <a class="button is-primary" href="{{ url('profile') }}">
               <span class="icon">
                   <i class="ion-person"></i>
               </span>
@@ -55,7 +55,7 @@
         </span>
         @if(Auth::user()->isAdmin == '1')
            <span class="nav-item">
-             <a href="{{ url('/admin') }}" class="button is-outlined">
+             <a href="{{ url('/admin') }}" class="button is-primary">
                  <span class="icon">
                      <i class="ion-wand"></i>
                  </span>
@@ -63,8 +63,16 @@
              </a>
            </span>
          @endif
+        <span class="nav-item">
+          <a class="button is-primary" href="{{ url('settings') }}">
+              <span class="icon">
+                  <i class="ion-ios-gear-outline"></i>
+              </span>
+              <span>Settings</span>
+          </a>
+        </span>
          <span class="nav-item">
-           <a class="button is-outlined" href="{{ url('/logout') }}"
+           <a class="button is-primary" href="{{ url('/logout') }}"
                 onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();" >
                <span class="icon">
@@ -142,6 +150,15 @@
                 </span>
               </a>
             @endif
+
+            <a class="dropdown-item" href="{{ url('settings') }}">
+              <span class="icon">
+                  <i class="ion-ios-gear-outline"></i>
+              </span>
+              <span>
+                Settings
+              </span>
+            </a>
             <a class="dropdown-item" href="{{ url('/logout') }}"
                 onclick="event.preventDefault();
                          document.getElementById('logout-form').submit();" class="button is-outlined">

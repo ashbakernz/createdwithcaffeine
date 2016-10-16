@@ -2,18 +2,13 @@
 
 @section('styles')
 <style type="text/css">
-  pre.prettyprint {
-      font-family: Monaco, Consolas, "Lucida Console", monospace;
-      background-color: #333;
-      padding: 20px;
-      font-size: 0.85em;
-      border: 0;
-      color: #e9e4e5;
-      line-height: 1.9em;
-      margin: 1em 0;
-      border-top: 1px solid #eee;
-      border-bottom: 1px solid #eee;
+  .showme{
+  display: none;
   }
+  .showhim:hover .showme{
+  display : block;
+  }
+
 </style>
 @endsection
 
@@ -108,16 +103,35 @@
               <p class="card-header-title">
                 {{ $discussion-> title }}
               </p>
+
+              @if($discussion->channels == 'Not Selected')
+              <!-- echo nothing -->
+              @else
               <a class="card-header-text">
                 <span class="tag is-{{ $discussion->channels }}">{{ $discussion-> channels }}
                 </span>
               </a>
+              @endif
 
-              <a class="card-header-text" href="{{ url('/discussion/delete/' . $discussion->id) }}">
-                <span class="icon is-primary">
-                  <i class="ion-ios-close-outline"></i>
-                </span>
-              </a>
+              <div class="dropdown pull-right">
+                <a href="javascript:void(0)" class="card-header-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="ion-arrow-down-b" aria-hidden="true"></i>
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dLabel">
+                  <a class="dropdown-item" href="#">
+                    <span class="icon is-primary">
+                      <i class="ion-edit"></i>
+                    </span>
+                    Edit
+                  </a>
+                  <a class="dropdown-item" href="{{ url('/discussion/delete/' . $discussion->id) }}">
+                    <span class="icon is-primary">
+                      <i class="ion-ios-close"></i>
+                    </span>
+                    Delete
+                  </a>
+                </div>
+              </div>
             </header>
             <div class="card-content">
               <div class="content">
@@ -144,11 +158,26 @@
                 @if($reply->user_id == Auth::User()->id)
                 <div class="head">
                   <div class="options">
-                    <a href="{{ url('/reply/delete/' . $reply->id . '/' . $discussion->id) }}">
-                      <span class="icon is-primary">
-                        <i class="ion-ios-close-outline"></i>
-                      </span>
-                    </a>
+
+                    <div class="dropdown pull-right">
+                      <a href="javascript:void(0)" class="card-header-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="ion-arrow-down-b" aria-hidden="true"></i>
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="dLabel">
+                        <a class="dropdown-item" href="#">
+                          <span class="icon is-primary">
+                            <i class="ion-edit"></i>
+                          </span>
+                          Edit
+                        </a>
+                        <a class="dropdown-item" href="{{ url('/reply/delete/' . $reply->id . '/' . $discussion->id) }}">
+                          <span class="icon is-primary">
+                            <i class="ion-ios-close"></i>
+                          </span>
+                          Delete
+                        </a>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 @else
@@ -207,4 +236,10 @@
       </div>
     </div>
   </section>
+@endsection
+
+@section('scripts')
+
+
+
 @endsection

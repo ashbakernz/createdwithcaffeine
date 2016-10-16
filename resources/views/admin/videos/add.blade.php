@@ -81,13 +81,13 @@
               {{ csrf_field() }}
                 <div class="control is-horizontal">
                   <div class="control">
-                    <input name="videoTitle" class="input" placeholder="Please enter video title"></input>
+                    <input required name="videoTitle" class="input" placeholder="Please enter video title"></input>
                   </div>
                 </div>
                 <div class="control is-horizontal">
                   <div class="control">
                     <div class="select is-fullwidth">
-                      <select name="videoChannel">
+                      <select required name="videoChannel">
                         <option value="Not Selected">Select Channel</option>
                         <option value="CSS">CSS</option>
                         <option value="laravel">Laravel</option>
@@ -98,17 +98,17 @@
                 </div>
                 <div class="control is-horizontal">
                   <div class="control">
-                    <input name="videoUrl" class="input" placeholder="Please enter video url"></input>
+                    <input required name="videoUrl" class="input" placeholder="Please enter video url"></input>
                   </div>
                 </div>
                 <div class="control is-horizontal">
                   <div class="control">
-                    <input name="videoThumbnail" class="input" placeholder="Please enter video thumbnail"></input>
+                    <input required name="videoThumbnail" class="input" placeholder="Please enter video thumbnail"></input>
                   </div>
                 </div>
                 <div class="control is-horizontal">
                   <div class="control">
-                    <textarea name="videoContent" class="textarea" placeholder="Please enter video description"></textarea>
+                    <textarea required name="videoContent" class="textarea" placeholder="Please enter video description"></textarea>
                   </div>
                 </div>
                 <div class="control is-horizontal">

@@ -56,24 +56,6 @@
 
 </section>
 <section class="section main">
-<nav class="level">
-  <div class="level-item has-text-centered">
-    <p class="heading">Videos</p>
-    <p class="title">{{ $videosCount }}</p>
-  </div>
-  <div class="level-item has-text-centered">
-    <p class="heading">Discussions</p>
-    <p class="title">{{ $discussionsCount }}</p>
-  </div>
-  <div class="level-item has-text-centered">
-    <p class="heading">Replies</p>
-    <p class="title">{{ $repliesCount }}</p>
-  </div>
-  <div class="level-item has-text-centered">
-    <p class="heading">Cups of coffee</p>
-    <p class="title">0</p>
-  </div>
-</nav>
     <div class="container">
       <div class="columns">
         <div class="column is-3">
